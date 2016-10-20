@@ -15,13 +15,14 @@ public class Main {
 
 //        HelloWorld helloWorld=(HelloWorld) context.getBean("HelloWorld");
 //        helloWorld.print();
-//        CustomerService service= (CustomerService) context.getBean("customerService");
-//        System.out.println(service.getNameById(1L));
-//        CustomerService service1= (CustomerService) context.getBean("customerService");
-//        System.out.println(service==service1);
 
-        Customer costumer=context.getBean(Customer.class);
-        System.out.println(costumer.getName()+" "+costumer.getAmount());
+        CustomerService service= (CustomerService) context.getBean("customerService");
+        System.out.println(service.getNameById(1L));
+        CustomerService service1= (CustomerService) context.getBean("customerService");
+        System.out.println(service==service1);
+
+//        Customer costumer=context.getBean(Customer.class);
+//        System.out.println(costumer.getName()+" "+costumer.getAmount());
 
     }
 }
