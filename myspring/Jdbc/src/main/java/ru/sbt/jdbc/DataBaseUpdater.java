@@ -1,4 +1,4 @@
-package ru.sbt;
+package ru.sbt.jdbc;
 
 import org.apache.commons.io.FileUtils;
 

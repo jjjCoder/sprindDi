@@ -1,4 +1,4 @@
-package ru.sbt;
+package ru.sbt.jdbc;
 
 public class User {
     private Long id;

@@ -1,4 +1,4 @@
-package ru.sbt;
+package ru.sbt.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

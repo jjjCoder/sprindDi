@@ -1,28 +1,32 @@
-package ru.sbt;
+package ru.sbt.jdbc;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-public class UserDao {
+public class UserDaoImplWithJdbc implements UserDao {
 
     private JdbcTemplate jdbcTemplate;
 
-    public UserDao(JdbcTemplate jdbcTemplate) {
+    public UserDaoImplWithJdbc(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate=jdbcTemplate;
     }
 
-    void createTable(){
+    @Override
+    public void createTable(){
 
     }
 
-    User findByLogin(String login){
+    @Override
+    public Optional<Object> findByLogin(String login){
         return null;
     }
 
-    boolean create(User user){
+    @Override
+    public boolean create(User user){
         return jdbcTemplate.execute(connection->{
             PreparedStatement statement=connection.prepareStatement("insert into user(");
             statement.setString(1, user.getLogin());
@@ -32,11 +36,13 @@ public class UserDao {
         });
     }
 
-    boolean update(User user){
+    @Override
+    public boolean update(User user){
         return false;
     }
 
-    List<User> list(){
+    @Override
+    public List<User> list(){
         return jdbcTemplate.execute(connection->{
             Statement statement=connection.createStatement();
             ResultSet resultSet=statement.executeQuery("select id, login, password_hash from user");
