@@ -14,11 +14,12 @@ public class Customer {
     private String lastName;
     private String phone;
     private String email;
+    private Address address;
 
 
     @Id
     @GeneratedValue
-    @Column(name="addressId", nullable=false)
+    @Column(name="customerId", nullable=false)
     public Long getId() {
         return id;
     }
